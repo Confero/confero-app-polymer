@@ -1,0 +1,22 @@
+{
+  "name": "Confero",
+  "version": "6.0.0",
+  "description": "Polymer edition",
+  "main": "src/index.html",
+  "authors": [
+    "Rylan Cottrell",
+    "Reid Holmes"
+  ],
+  "license": "GPLv2",
+  "homepage": "http://www.confero-app.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0"
+  }
+}
