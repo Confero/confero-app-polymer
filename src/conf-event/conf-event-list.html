@@ -1,0 +1,25 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="./conf-event-item.html">
+
+<dom-module id="conf-event-list">
+    <template>
+        
+        <iron-ajax 
+            auto
+            url="http://www.conferoapp.com/assets/EventIndex.json"
+            handle-as="json"
+            last-response="{{confEvents}}"></iron-ajax>
+        
+         <template is="dom-repeat" items="[[confEvents.Events]]">
+             <conf-event-item conf="[[item]]"></conf-event-item>
+        </template> 
+    </template>
+</dom-module>
+
+
+<script>
+    Polymer({
+        is: "conf-event-list"
+    });
+</script>

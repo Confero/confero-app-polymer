@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="conf-event-item">
+    <style>
+        .u-table {
+            display: table;
+        }
+        
+        .u-table-cell {
+            display: table-cell;
+        }
+        
+        .u-vertical-top {
+            vertical-align: top;
+        }
+        
+        .u-padding {
+            padding: 10px;
+        }
+    </style>
+    <template>
+        <paper-material elevation="2">
+            <div class="u-table">
+                <img src="{{imageLocation(conf.Image)}}" class="u-table-cell u-vertical-top u-padding">
+                <div class="u-table-cell u-vertical-top u-padding">
+                    <p>[[conf.Name]]</p>
+                    <p>[[conf.date]]</p>
+                </div>
+            </div>
+        </paper-material>
+    </template>
+</dom-module>
+
+
+<script>
+    // register a new element called proto-element
+    Polymer({
+        is: "conf-event-item",
+        properties: {
+            conf: "Object"
+        },
+        imageLocation: function( image ) {
+            return "http://www.conferoapp.com/data/icon62/" + image;
+        }
+    });
+</script>
