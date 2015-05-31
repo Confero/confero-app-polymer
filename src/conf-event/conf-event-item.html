@@ -25,16 +25,18 @@
                 <img src="{{imageLocation(conf.Image)}}" class="u-table-cell u-vertical-top u-padding">
                 <div class="u-table-cell u-vertical-top u-padding">
                     <p>[[conf.Name]]</p>
-                    <p>[[conf.date]]</p>
+                    <p>[[conf.Description]]</p>
+                    <p>{{prettyDate(conf.StartDate, conf.EndDate)}}</p>
                 </div>
             </div>
         </paper-material>
     </template>
 </dom-module>
 
-
+<script type="text/javascript" src="../../bower_components/momentjs/min/moment-with-locales.min.js"></script>
 <script>
-    // register a new element called proto-element
+    moment.locale( window.navigator.language );
+    
     Polymer({
         is: "conf-event-item",
         properties: {
@@ -42,6 +44,12 @@
         },
         imageLocation: function( image ) {
             return "http://www.conferoapp.com/data/icon62/" + image;
+        },
+        prettyDate: function(start, end) {
+            var sm = moment(start, "YYYY-MM-DD");
+            var em = moment(end, "YYYY-MM-DD");
+            return sm.format("LL") + " - " + em.format("LL");
         }
+        
     });
 </script>
