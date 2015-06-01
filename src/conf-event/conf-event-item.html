@@ -24,9 +24,9 @@
             <div class="u-table">
                 <img src="{{imageLocation(conf.Image)}}" class="u-table-cell u-vertical-top u-padding">
                 <div class="u-table-cell u-vertical-top u-padding">
-                    <p>[[conf.Name]]</p>
-                    <p>[[conf.Description]]</p>
-                    <p>{{prettyDate(conf.StartDate, conf.EndDate)}}</p>
+                    <p class="event-name">[[conf.Name]]</p>
+                    <p class="event-description">[[conf.Description]]</p>
+                    <p class="event-date">{{prettyDate(conf.StartDate, conf.EndDate)}}</p>
                 </div>
             </div>
         </paper-material>
@@ -40,7 +40,10 @@
     Polymer({
         is: "conf-event-item",
         properties: {
-            conf: "Object"
+            conf: {
+                type: "Object",
+                notify: true
+            }
         },
         imageLocation: function( image ) {
             return "http://www.conferoapp.com/data/icon62/" + image;
