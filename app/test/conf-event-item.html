@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta charset="UTF-8">
+  <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../../bower_components/polymer/polymer.html">
+  <script src="../../bower_components/web-component-tester/browser.js"></script>
+  <script src="../../bower_components/test-fixture/test-fixture-mocha.js"></script>
+  <link rel="import" href="../../bower_components/test-fixture/test-fixture.html">
+
+
+  <link rel="import" href="../elements/conf-event/conf-event-item.html">
+</head>
+
+<body>
+  <test-fixture>
+    <template>
+      <conf-event-item id="fixture"></conf-event-item>
+    </template>
+  </test-fixture>
+  <script>
+    suite('<conf-event-item>', function () {
+      var confEvent;
+
+      setup(function () {
+        confEvent = fixture('fixture');
+      });
+
+      teardown(function (done) {
+        confEvent.conf = null;
+        flush(done);
+      });
+
+      test('is empty', function () {
+
+        assert.isUndefined(confEvent.conf);
+      });
+
+      test('is defined with conf data', function () {
+        var confData = {
+          Image: 'fakeImage.png',
+          Name: 'Fake conference name',
+          Description: 'International conference on fakeness',
+          StartDate: '2015-02-23',
+          EndDate: '2015-02-28'
+        };
+
+        confEvent.conf = confData;
+        // node.deliverChanges();
+
+        flush(function () {
+          var img = confEvent.querySelector('img');
+          assert.equal(img.src, "http://www.conferoapp.com/data/icon62/" + confData.Image);
+          var name = confEvent.querySelector('.event-name');
+          assert.equal(name.textContent, confData.Name);
+          var description = confEvent.querySelector('.event-description');
+          assert.equal(description.textContent, confData.Description);
+          var eventDate = confEvent.querySelector('.event-date');
+          assert.equal(eventDate.textContent, "");
+
+          done();
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
