@@ -15,50 +15,43 @@
 </head>
 
 <body>
-  <test-fixture>
+  <test-fixture id="confEvent">
     <template>
-      <conf-event-item id="fixture"></conf-event-item>
+      <conf-event-item></conf-event-item>
     </template>
   </test-fixture>
+
   <script>
     suite('<conf-event-item>', function () {
       var confEvent;
 
       setup(function () {
-        confEvent = fixture('fixture');
-      });
-
-      teardown(function (done) {
-        confEvent.conf = null;
-        flush(done);
+        confEvent = fixture('confEvent');
       });
 
       test('is empty', function () {
-
         assert.isUndefined(confEvent.conf);
       });
 
       test('is defined with conf data', function () {
         var confData = {
-          Image: 'fakeImage.png',
           Name: 'Fake conference name',
           Description: 'International conference on fakeness',
           StartDate: '2015-02-23',
-          EndDate: '2015-02-28'
+          EndDate: '2015-02-28',
+          Image: 'fakeImage.png'
         };
-
         confEvent.conf = confData;
-        // node.deliverChanges();
 
         flush(function () {
           var img = confEvent.querySelector('img');
           assert.equal(img.src, "http://www.conferoapp.com/data/icon62/" + confData.Image);
-          var name = confEvent.querySelector('.event-name');
+          var name = item.querySelector('.event-name');
           assert.equal(name.textContent, confData.Name);
-          var description = confEvent.querySelector('.event-description');
+          var description = item.querySelector('.event-description');
           assert.equal(description.textContent, confData.Description);
-          var eventDate = confEvent.querySelector('.event-date');
-          assert.equal(eventDate.textContent, "");
+          var eventDate = item.querySelector('.event-date');
+          assert.equal(eventDate.textContent, "February 23, 2015 - February 28, 2015");
 
           done();
         });
