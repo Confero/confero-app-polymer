@@ -8,7 +8,8 @@
         "test": "test"
     },
     "scripts": {
-        "deps": "npm install -g gulp && npm install -g bower && npm install && bower install"
+        "deps": "npm install -g gulp && npm install -g bower && npm install && bower install",
+        "test": "gulp test"
     },
     "devDependencies": {
         "apache-server-configs": "^2.7.1",
