@@ -9,7 +9,7 @@
     },
     "scripts": {
         "deps": "npm install -g gulp && npm install -g bower && npm install && bower install",
-        "test": "gulp test"
+        "test": "wct --plugin sauce"
     },
     "devDependencies": {
         "apache-server-configs": "^2.7.1",
