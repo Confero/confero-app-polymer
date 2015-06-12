@@ -9,7 +9,6 @@
     },
     "scripts": {
         "deps": "npm install -g gulp && npm install -g bower && npm install && bower install",
-        "postinstall": "npm install -g bower && bower install",
         "test": "wct --plugin sauce"
     },
     "devDependencies": {
