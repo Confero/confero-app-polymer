@@ -2,3 +2,6 @@
 
 # confero-app-polymer
 Polymer version of the Confero app
+
+
+Test Site http://conferoapp.azurewebsites.net
