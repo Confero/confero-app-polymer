@@ -1,37 +1,39 @@
 {
-    "name": "Confero",
-    "version": "6.0.0",
-    "description": "Polymer edition",
-    "main": "src/index.html",
-    "private": true,
-    "authors": [
+  "name": "Confero",
+  "version": "6.0.0",
+  "description": "Polymer edition",
+  "main": "src/index.html",
+  "private": true,
+  "authors": [
     "Rylan Cottrell",
     "Reid Holmes"
   ],
-    "license": "GPLv2",
-    "homepage": "http://www.confero-app.com",
-    "ignore": [
+  "license": "GPLv2",
+  "homepage": "http://www.confero-app.com",
+  "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
   ],
-    "devDependencies": {
-        "web-component-tester": "*",
-        "test-fixture": "PolymerElements/test-fixture#^1.0.0"
-    },
-    "dependencies": {
-        "polymer": "Polymer/polymer#1.0.0",
-        "paper-material": "PolymerElements/paper-material#1.0.0",
-        "iron-ajax": "PolymerElements/iron-ajax#1.0.0",
-        "momentjs": "~2.10.3",
-        "paper-header-panel": "PolymerElements/paper-header-panel#1.0.0",
-        "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#1.0.0",
-        "paper-toolbar": "PolymerElements/paper-toolbar#1.0.0",
-		"neon-animation": "PolymerElements/neon-animation#^1.0.0",
-		 "iron-pages": "PolymerElements/iron-pages#^1.0.0",
-		"paper-tabs": "PolymerElements/paper-tabs#^1.0.0",
-		 "paper-ripple": "PolymerElements/paper-ripple#^1.0.0"
-    }
+  "devDependencies": {
+    "web-component-tester": "*",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
+  },
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0",
+    "paper-material": "PolymerElements/paper-material#1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#1.0.0",
+    "momentjs": "~2.10.3",
+    "paper-header-panel": "PolymerElements/paper-header-panel#1.0.0",
+    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#1.0.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#1.0.0",
+    "neon-animation": "PolymerElements/neon-animation#^1.0.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.0",
+    "paper-tabs": "PolymerElements/paper-tabs#^1.0.0",
+    "paper-ripple": "PolymerElements/paper-ripple#^1.0.0",
+    "page": "~1.6.3",
+    "iron-elements": "~1.0.0"
+  }
 }
